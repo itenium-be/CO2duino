@@ -27,79 +27,24 @@ void setup()
     Serial.begin(9600);
 
     display.begin();
-    display.setCursor(0, 0);
-    ESPConnect.autoConnect("CO2 Meter");
-
-    if (ESPConnect.begin(&server))
-    {
-        display.println("Connected to WiFi");
-        display.println("IPAddress: " + WiFi.localIP().toString());
-        display.display();
-        delay(10000);
-    }
-    else
-    {
-        display.println("Failed to connect to WiFi");
-        display.display();
-    }
-
-    server.begin();
-
-    if (!sgp.begin())
-    {
-        display.clearDisplay();
-        display.println("Sensor not found :(");
-        display.display();
-        while (1)
-            ;
-    }
 
     showBootscreen();
-
-    display.setFont();
-    display.cp437(true);
 
     while (1)
         loop();
 }
 
-int counter = 0;
-uint16_t TVOC_base = 0;
-uint16_t eCO2_base = 0;
 void loop()
 {
     display.clearDisplay();
-    display.setCursor(0, 0);
-    if (!sgp.IAQmeasure())
-    {
-        display.println("Measurement failed");
-        display.display();
-        return;
-    }
-
-    display.print("TVOC ");
-    display.print(sgp.TVOC);
-    display.println(" ppb\t");
-    display.print("eCO2 ");
-    display.print(sgp.eCO2);
-    display.println(" ppm");
-    if (counter == 20)
-    {
-        counter = 0;
-
-        if (!sgp.getIAQBaseline(&eCO2_base, &TVOC_base))
-        {
-            display.println("Failed to get baseline readings");
-            return;
-        }
-    }
-    display.print("CO2 0x");
-    display.print(eCO2_base, HEX);
-    display.print("TVOC 0x");
-    display.println(TVOC_base, HEX);
+    display.setFont();
+    display.cp437(true);
+    display.setCursor(0,0);
+    display.println(F("What is my purpose?"));
+    display.println(F("Please program me."));
     display.display();
-    counter++;
-    delay(1000);
+    delay(10000);
+    display.invertDisplay(true);
 }
 
 void showBootscreen()
@@ -118,7 +63,7 @@ void showBootscreen()
     for (size_t i = 0; i < 60; i++)
     {
         drawProgressBar(60, i);
-        delay(250);
+        delay(25);
     }
 }
 
