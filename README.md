@@ -25,3 +25,8 @@ Click on this icon and you'll be greeted by the PlatformIO Home screen. On this 
 After pressing `Open`, PlatformIO will begin installing all the dependencies of the project. This will take another couple of minutes. You'll know when it's done when you see the Build icon appear in your VS code bottom bar:
 
 ![Build icon](/assets/build-icon.png "Build Icon")
+
+
+## Resources
+
+You can find the STL files of the 3D printed enclosure in the assets folder. You need to print 3 parts and use 3 M2 4mm bolts. [Assembly guide](assembly.md).
