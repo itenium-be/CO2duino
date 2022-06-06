@@ -58,7 +58,7 @@ void setup()
     delay(3000);
 
     // For testing purposes of the WiFiManager uncomment the next line, this gives you a fresh start each boot
-    wm.resetSettings();
+    // wm.resetSettings();
 
     // Set up the time on our ESP32
     configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
