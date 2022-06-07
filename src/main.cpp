@@ -21,17 +21,23 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // WiFiManager
-WiFiManager wm;
-char wm_ifttt_url[100];
+WiFiManager wifiManager;
+char iftttUrlFromWiFiManager[100];
+char thingspeakUrlFromWiFiManager[100];
+WiFiManagerParameter custom_ifttt_url("ifttturl", "IFTTT Webhook URL", iftttUrlFromWiFiManager, 100);
+WiFiManagerParameter custom_thingspeak_url("thingspeakurl", "Thingspeak URL", thingspeakUrlFromWiFiManager, 100);
+
+// URL's for API calls
 String ifttt_url = "";
-WiFiManagerParameter custom_ifttt_url("ifttturl", "IFTTT Webhook URL", wm_ifttt_url, 100);
+String thingspeak_url = "";
 
 // SGP30 CO2 sensor
 Adafruit_SGP30 sgp;
 
 // Preferences
 Preferences preferences;
-String pref_ifttt_url;
+String iftttUrlFromPreferences;
+String thingspeakUrlFromPreferences;
 uint16_t TVOC_base = 0;
 uint16_t eCO2_base = 0;
 
@@ -47,8 +53,9 @@ void drawProgressBar(int16_t maxValue, int16_t currentValue);
 void showBootscreen();
 void configModeCallback(WiFiManager *myWiFiManager);
 bool checkConnection();
-void sendNotification();
-void setIFTTTUrl();
+void sendNotificationNonBlocking(void *parameter);
+void setURLs();
+void sendDataNonBlocking(void *parameter);
 
 void setup()
 {
@@ -57,8 +64,15 @@ void setup()
     Serial.setDebugOutput(true);
     delay(3000);
 
+    // Start the display
+    display.begin();
+    resetScreen();
+
+    // Bootscreen allows the CO2 sensor some time to warm up
+    showBootscreen();
+
     // For testing purposes of the WiFiManager uncomment the next line, this gives you a fresh start each boot
-    // wm.resetSettings();
+    // wifiManager.resetSettings();
 
     // Set up the time on our ESP32
     configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
@@ -67,20 +81,29 @@ void setup()
     preferences.begin("co2meter", false);
     TVOC_base = preferences.getUShort("TVOC_base", 0);
     eCO2_base = preferences.getUShort("eCO2_base", 0);
-    pref_ifttt_url = preferences.getString("IFTTT_url", "");
+    iftttUrlFromPreferences = preferences.getString("IFTTT_url", "");
+    thingspeakUrlFromPreferences = preferences.getString("ThingSpeak_url", "");
 
-    // Add a "IFTTT Webhook URL" option to the WiFiManager
-    wm.addParameter(&custom_ifttt_url);
+    Serial.println("Got values from Preferences: ");
+    Serial.print("TVOC_base: ");
+    Serial.println(TVOC_base);
+    Serial.print("eCO2_base: ");
+    Serial.println(eCO2_base);
+    Serial.print("iftttUrlFromPreferences: ");
+    Serial.println(iftttUrlFromPreferences);
+    Serial.print("thingspeakUrlFromPreferences: ");
+    Serial.println(thingspeakUrlFromPreferences);
 
-    // Start the display
-    display.begin();
-    resetScreen();
+    // Add a "IFTTT Webhook URL" and "Thingspeak URL" option to the WiFiManager
+    wifiManager.addParameter(&custom_ifttt_url);
+    wifiManager.addParameter(&custom_thingspeak_url);
 
     // Check if we can talk to our CO2 sensor
     if (!sgp.begin())
     {
         display.clearDisplay();
         display.println("Sensor not found :(");
+        Serial.println("Could not begin the SGP30 sensor");
         display.display();
         while (1)
             ;
@@ -89,11 +112,9 @@ void setup()
     // If we have previously saved baseline values for the TVOC and CO2 values, set them here
     if (TVOC_base != 0 && eCO2_base != 0)
     {
+        Serial.println("Setting previously stored baseline values");
         sgp.setIAQBaseline(eCO2_base, TVOC_base);
     }
-
-    // Bootscreen allows the CO2 sensor some time to warm up
-    showBootscreen();
 
     display.setFont();
     display.cp437(true);
@@ -111,7 +132,7 @@ void loop()
         // If we're not connected to the WiFi check for a saved network or open the captive portal
         checkConnection();
         // We should be connected, check if the user passed a IFTTT URL
-        setIFTTTUrl();
+        setURLs();
     }
 }
 
@@ -124,14 +145,14 @@ bool checkConnection()
     char ap_name[50];
     prefix.toCharArray(ap_name, 50);
 
-    if (wm.getWiFiIsSaved())
+    if (wifiManager.getWiFiIsSaved())
     {
         resetScreen();
         display.println("Found saved network");
-        display.println(wm.getWiFiSSID());
+        display.println(wifiManager.getWiFiSSID());
         display.println("Trying to connect");
         display.display();
-        return wm.autoConnect(ap_name);
+        return wifiManager.autoConnect(ap_name);
     }
     else
     {
@@ -140,35 +161,59 @@ bool checkConnection()
         display.println(ap_name);
         display.println("to continue setup");
         display.display();
-        return wm.startConfigPortal(ap_name);
+        return wifiManager.startConfigPortal(ap_name);
     }
 }
 
-void setIFTTTUrl()
+void setURLs()
 {
     // Get value from WiFiManager
-    strcpy(wm_ifttt_url, custom_ifttt_url.getValue());
-    String wm_ifttt_url_string = String(wm_ifttt_url);
+    strcpy(iftttUrlFromWiFiManager, custom_ifttt_url.getValue());
+    String iftttUrlFromWiFiManager_string = String(iftttUrlFromWiFiManager);
 
     Serial.println("Setting the IFTTT URL");
     Serial.println("Value from WiFiManager: ");
-    Serial.println(wm_ifttt_url_string);
+    Serial.println(iftttUrlFromWiFiManager_string);
     Serial.println("Value in Preferences: ");
-    Serial.println(pref_ifttt_url);
+    Serial.println(iftttUrlFromPreferences);
 
     // The WiFiManager passed us a IFTTT URL
-    if (wm_ifttt_url_string != "")
+    if (iftttUrlFromWiFiManager_string != "")
     {
-        ifttt_url = wm_ifttt_url_string;
+        ifttt_url = iftttUrlFromWiFiManager_string;
         preferences.putString("IFTTT_url", ifttt_url);
     }
     // If no URL was passed, check for a previously saved one in the Preferences
-    else if (pref_ifttt_url != "")
+    else if (iftttUrlFromPreferences != "")
     {
-        ifttt_url = pref_ifttt_url;
+        ifttt_url = iftttUrlFromPreferences;
     }
-    Serial.println("Used URL: ");
+    Serial.println("Used IFTTT URL: ");
     Serial.println(ifttt_url);
+
+    // Get value from WiFiManager
+    strcpy(thingspeakUrlFromWiFiManager, custom_thingspeak_url.getValue());
+    String thingspeakUrlFromWiFiManager_string = String(thingspeakUrlFromWiFiManager);
+
+    Serial.println("Setting the Thingspeak URL");
+    Serial.println("Value from WiFiManager: ");
+    Serial.println(thingspeakUrlFromWiFiManager_string);
+    Serial.println("Value in Preferences: ");
+    Serial.println(thingspeakUrlFromPreferences);
+
+    // The WiFiManager passed us a Thingspeak URL
+    if (thingspeakUrlFromWiFiManager_string != "")
+    {
+        thingspeak_url = thingspeakUrlFromWiFiManager_string;
+        preferences.putString("ThingSpeak_url", ifttt_url);
+    }
+    // If no URL was passed, check for a previously saved one in the Preferences
+    else if (iftttUrlFromPreferences != "")
+    {
+        thingspeak_url = thingspeakUrlFromPreferences;
+    }
+    Serial.println("Used ThingSpeak URL: ");
+    Serial.println(thingspeak_url);
 }
 
 int counter = 0;
@@ -207,9 +252,32 @@ void measureLoop()
         // Only send notification when the last one is more than 10 minutes ago
         if (lastNotification == 0 || millis() - lastNotification > 600000)
         {
-            sendNotification();
+            // We send the notification using a task so it doesn't block the main loop
+            // the task kills itself
+            xTaskCreate(
+                sendNotificationNonBlocking, // Function that should be called
+                "Send GET request to IFTT",  // Name of the task (for debugging)
+                10000,                       // Stack size (bytes)
+                NULL,                        // Parameter to pass
+                1,                           // Task priority
+                NULL                         // Task handle
+            );
+
             lastNotification = millis();
         }
+    }
+
+    // Every 30 seconds we send data to thingspeak
+    if (counter % 30 == 0)
+    {
+        xTaskCreate(
+            sendDataNonBlocking,              // Function that should be called
+            "Send GET request to thingspeak", // Name of the task (for debugging)
+            10000,                            // Stack size (bytes)
+            NULL,                             // Parameter to pass
+            1,                                // Task priority
+            NULL                              // Task handle
+        );
     }
 
     // Every minute we read out the baseline values and save them to EEPROM
@@ -221,6 +289,11 @@ void measureLoop()
         }
         else
         {
+            Serial.println("Saving baseline values to EEPROM");
+            Serial.print("TVOC_base: ");
+            Serial.println(TVOC_base);
+            Serial.print("eCO2_base: ");
+            Serial.println(eCO2_base);
             preferences.putUShort("TVOC_base", TVOC_base);
             preferences.putUShort("eCO2_base", eCO2_base);
         }
@@ -232,13 +305,12 @@ void measureLoop()
     delay(1000);
 }
 
-void sendNotification()
+void sendNotificationNonBlocking(void *parameter)
 {
     // Only send notification if we have a IFTTT url
     if (ifttt_url != "")
     {
         HTTPClient http;
-
         http.begin(ifttt_url);
         Serial.println("Sending GET request to: ");
         Serial.println(ifttt_url);
@@ -246,6 +318,23 @@ void sendNotification()
 
         http.end();
     }
+    vTaskDelete(NULL);
+}
+
+void sendDataNonBlocking(void *parameter)
+{
+    if (thingspeak_url != "")
+    {
+
+        HTTPClient http;
+        String url = thingspeak_url + "&field1=" + sgp.eCO2 + "&field2=" + sgp.TVOC;
+        http.begin(url);
+        Serial.println("Sending GET request to: ");
+        Serial.println(url);
+        int httpResponseCode = http.GET();
+        http.end();
+    }
+    vTaskDelete(NULL);
 }
 
 void resetScreen()
@@ -273,7 +362,7 @@ void showBootscreen()
     for (size_t i = 0; i < 60; i++)
     {
         drawProgressBar(60, i);
-        delay(25);
+        delay(250);
     }
 }
 
