@@ -118,6 +118,7 @@ void setup()
 
     display.setFont();
     display.cp437(true);
+    display.dim(true);
 }
 
 void loop()
@@ -218,6 +219,7 @@ void setURLs()
 
 int counter = 0;
 ulong lastNotification = 0;
+bool invertColors = false;
 void measureLoop()
 {
     counter++;
@@ -297,6 +299,9 @@ void measureLoop()
             preferences.putUShort("TVOC_base", TVOC_base);
             preferences.putUShort("eCO2_base", eCO2_base);
         }
+        // We invert the colors of the display to reduce burn in
+        display.invertDisplay(invertColors);
+        invertColors = !invertColors;
         counter = 0;
     }
 
