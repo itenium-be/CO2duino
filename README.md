@@ -8,7 +8,7 @@ A DIY CO2 meter based on the [Wemos S2 Pico](https://www.wemos.cc/en/latest/s2/s
 ![A photo of the end result](/assets/co2-meter.jpeg "Photo")
 
 
-## Initial setup
+# Initial setup
 
 First we'll clone this repository:
 
@@ -29,7 +29,7 @@ After pressing `Open`, PlatformIO will begin installing all the dependencies of 
 ![Build icon](/assets/build-icon.png "Build Icon")
 
 
-## Exercises
+# Exercises
 
 In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in `main.cpp`) shows a bootscreen and some text on the display.
 
@@ -42,25 +42,26 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 7. Log data to ThingSpeak
 8. Make it pretty
 
-## Resources
+# Resources
 
-### Enclosure
+## Enclosure
+
 - [Assembly guide](assembly.md)
 
-### CO2 Sensor (Sensirion SGP30)
+## CO2 Sensor (Sensirion SGP30)
 
 - [SGP30 Datasheet](https://sensirion.com/media/documents/984E0DD5/61644B8B/Sensirion_Gas_Sensors_Datasheet_SGP30.pdf)
 - [Adafruit SGP30 library](https://github.com/adafruit/Adafruit_SGP30)
 
-### Display
+## Display
 
 - [Adafruit SSD1306 OLED driver](https://github.com/adafruit/Adafruit_SSD1306)
 - [Adafruit Graphics library](https://learn.adafruit.com/adafruit-gfx-graphics-library)
 
-### WiFi connectivity
+## WiFi connectivity
 
 - [WiFiManager](https://github.com/tzapu/WiFiManager)
 
-### Utility
+## Utility
 
 - [Preferences](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/preferences.html)
