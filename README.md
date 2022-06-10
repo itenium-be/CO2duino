@@ -35,8 +35,8 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 
 1. [Initialize the CO2 sensor and read data from it](exercises/initialize-sensor.md)
 2. [Display sensor data on the screen](exercises/display-sensor-data.md)
-3. Save the calibration data to the device
-4. Connect to a known WiFi network
+3. [Save the calibration data to the device](exercises/sensor-calibration.md)
+4. [Connect to a known WiFi network](exercises/connect-wifi.md)
 5. Set up an access point so the user can choose their WiFi network and enter its password
 6. Send a notification to your phone using IFTTT
 7. Log data to ThingSpeak
@@ -65,3 +65,11 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 ## Utility
 
 - [Preferences](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/preferences.html)
+
+# Troubleshooting
+
+**My code won't flash! There is no COM port found!**
+
+No worries, we can manually set the device to "Flashing mode" by pressing the two tiny buttons on the side of the board at the same time. Your device will reboot and be ready to flash again. You might have to manually reset the board after flashing by pressing the tiny "Reset" button.
+
+![Buttons](/assets/troubleshoot-reset.png "Buttons")

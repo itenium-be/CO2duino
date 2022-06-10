@@ -1,5 +1,6 @@
-| [Back to exercises](../README.md#exercises) | [Display sensor data on the screen](display-sensor-data.md) |
+| Index | Next exercise |
 | :--- | ---: |
+| [Back to exercises](../README.md#exercises) | [Display sensor data on the screen](display-sensor-data.md) |
 
 # Initializing the sensor
 
@@ -14,5 +15,9 @@ When building and uploading your program to the microcontroller, make sure to us
 >>>
 **Note** if the sensor only outputs a value of 400 for the CO2 and 0 for the TVOC, don't panic, this is normal in the first ~30s of polling.
 >>>
+
+## Expected result
+
+![Result](/assets/initialize-sensor-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [displaying this data on the display](display-sensor-data.md)!
