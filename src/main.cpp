@@ -10,6 +10,9 @@
 #include <HTTPClient.h>
 #include <Preferences.h>
 #include <time.h>
+#include <Fonts/FreeSans18pt7b.h>
+#include <esp_task_wdt.h>
+
 #include "icons.h"
 
 #include "data-model.h"
@@ -76,7 +79,7 @@ void setup()
     resetScreen();
 
     // For testing purposes of the WiFiManager uncomment the next line, this gives you a fresh start each boot
-    wifiManager.resetSettings();
+    // wifiManager.resetSettings();
 
     // Initialize the Preferences library and check for existing values
     preferences.begin("co2meter", false);
@@ -138,6 +141,10 @@ void setup()
     display.setFont();
     display.cp437(true);
     display.dim(true);
+
+    // Create a Watchdog that resets the ESP32 when a task runs for longer than 4 minutes
+    // The check connection task is the longest running one and should return after 3 mins
+    esp_task_wdt_init(240, true);
 
     // Initialize our continuously running tasks
     xTaskCreate(readSensorData, "Read sensor data", 10000, NULL, 1, NULL);
