@@ -1,6 +1,5 @@
 #include "update-display.h"
 #include <Arduino.h>
-#include <esp_task_wdt.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <Fonts/FreeSans12pt7b.h>
@@ -17,9 +16,6 @@ extern Adafruit_SSD1306 display;
 // Update display every second
 void updateDisplay(void *parameter)
 {
-    // Add task to watchdog
-    esp_task_wdt_add(NULL);
-
     for (;;)
     {
         resetScreen();
@@ -54,9 +50,6 @@ void updateDisplay(void *parameter)
         data.blink = !data.blink;
 
         display.display();
-
-        // Reset watchdog timer
-        esp_task_wdt_reset();
 
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }

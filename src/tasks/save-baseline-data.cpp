@@ -1,6 +1,5 @@
 #include "save-baseline-data.h"
 #include <Arduino.h>
-#include <esp_task_wdt.h>
 #include <Adafruit_SGP30.h>
 #include <Preferences.h>
 #include "../data-model.h"
@@ -21,9 +20,6 @@ extern uint16_t eCO2_base;
 // Every minute read out the sensor's baseline data and save it to Preferences
 void saveBaselineData(void *parameter)
 {
-    // Add task to watchdog
-    esp_task_wdt_add(NULL);
-
     for (;;)
     {
         // Take control of the SGP30 mutex before accessing the sensor
@@ -46,9 +42,6 @@ void saveBaselineData(void *parameter)
 
         // Release the SGP30 mutex
         xSemaphoreGive(sgp30Mutex);
-
-        // Reset watchdog timer
-        esp_task_wdt_reset();
 
         vTaskDelay(60000 / portTICK_PERIOD_MS);
     }

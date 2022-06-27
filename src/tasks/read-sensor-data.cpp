@@ -1,7 +1,6 @@
 #include "read-sensor-data.h"
 #include <Arduino.h>
 #include <Adafruit_SGP30.h>
-#include <esp_task_wdt.h>
 #include "../data-model.h"
 #include "send-notification.h"
 
@@ -17,9 +16,6 @@ extern CO2Data data;
 // Read CO2 and TVOC values from our SGP30 sensor every second
 void readSensorData(void *parameter)
 {
-    // Add task to watchdog
-    esp_task_wdt_add(NULL);
-
     for (;;)
     {
         // Take control of the SGP30 mutex before accessing the sensor
@@ -60,9 +56,6 @@ void readSensorData(void *parameter)
 
         // Release the SGP30 mutex
         xSemaphoreGive(sgp30Mutex);
-
-        // Reset watchdog timer
-        esp_task_wdt_reset();
 
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }

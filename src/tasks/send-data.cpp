@@ -1,6 +1,5 @@
 #include "send-data.h"
 #include <Arduino.h>
-#include <esp_task_wdt.h>
 #include <HTTPClient.h>
 #include "../data-model.h"
 
@@ -10,9 +9,6 @@ extern CO2Data data;
 // Every minute send sensor data to ThingSpeak
 void sendData(void *parameter)
 {
-    // Add task to watchdog
-    esp_task_wdt_add(NULL);
-
     for (;;)
     {
         if (data.thingspeak_url != "" && data.wifiConnected)
@@ -26,9 +22,6 @@ void sendData(void *parameter)
             int httpResponseCode = http.GET();
             http.end();
         }
-
-        // Reset watchdog timer
-        esp_task_wdt_reset();
 
         vTaskDelay(60000 / portTICK_PERIOD_MS);
     }

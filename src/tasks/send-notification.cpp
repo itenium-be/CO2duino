@@ -2,7 +2,6 @@
 #include <Arduino.h>
 #include <HTTPClient.h>
 #include "../data-model.h"
-#include <esp_task_wdt.h>
 
 // Data struct
 extern CO2Data data;
@@ -10,9 +9,6 @@ extern CO2Data data;
 // Send notification through IFTT, task kills itself
 void sendNotification(void *parameter)
 {
-    // Add task to watchdog
-    esp_task_wdt_add(NULL);
-
     // Only send notification if we have a IFTTT url
     if (data.ifttt_url != "" && data.wifiConnected)
     {
@@ -24,9 +20,6 @@ void sendNotification(void *parameter)
 
         http.end();
     }
-
-    // Reset watchdog timer
-    esp_task_wdt_reset();
 
     vTaskDelete(NULL);
 }
