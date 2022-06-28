@@ -1,0 +1,17 @@
+| Index                                       |                                   Next exercise |
+| :------------------------------------------ | ----------------------------------------------: |
+| [Back to exercises](../README.md#exercises) | [Further improvements](further-improvements.md) |
+
+# Configure URL's
+
+We still have two hardcoded URL's in our project, the ThingSpeak URL and the IFTTT URL. In order to make these configurable we'll use parameters in the WiFiManager project. The user can then provide these URL's when they are connecting to their own WiFi. Read the provided [Random Nerd WiFiManager Tutorial](https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/) to get started!
+
+## Useful links
+
+- [Random Nerd WiFiManager Tutorial](https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/)
+
+## Example result
+
+Everything works? Congratulations! You've built a feature complete CO2 sensor! Give yourself a high five!
+
+Hungry for more? See the [Further improvements](further-improvements.md) exercise where I've provided you with some reading materials and ideas to implement some advanced features!

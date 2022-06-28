@@ -1,6 +1,6 @@
 | Index                                       |                                   Next exercise |
 | :------------------------------------------ | ----------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Further improvements](further-improvements.md) |
+| [Back to exercises](../README.md#exercises) | [Configure URLs](configure-urls.md) |
 
 # Make it pretty
 
@@ -22,4 +22,4 @@ Some ideas:
 
 ![Result](/assets/make-it-pretty-result.png "Result")
 
-Everything works? Great! Head on over to the next exercise, [Further improvements](further-improvements.md)!
+Everything works? Great! Head on over to the next exercise, [Configure URLs](configure-urls.md)!

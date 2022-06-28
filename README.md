@@ -2,11 +2,25 @@
 
 [[_TOC_]]
 
-A DIY CO2 meter based on the [Wemos S2 Pico](https://www.wemos.cc/en/latest/s2/s2_pico.html) dev board and a [SGP30 CO2 sensor](https://www.tinytronics.nl/shop/nl/sensoren/lucht/gas/sgp30-tvoc-en-eco2-sensor-module). It's programmed using [PlatformIO](https://platformio.org/) and the Arduino framework.
+A DIY CO2 meter based on the [Wemos S2 Pico](https://www.wemos.cc/en/latest/s2/s2_pico.html) dev board and a [SGP30 CO2 sensor](https://www.tinytronics.nl/shop/nl/sensoren/lucht/gas/sgp30-tvoc-en-eco2-sensor-module). It's programmed using [PlatformIO](https://platformio.org/) and the [Arduino](https://www.arduino.cc/) framework.
 
 ![A photo of the end result](/assets/co2-meter.jpeg "Photo")
 
-# Initial setup
+# Initial hardware setup
+
+To get started you'll have to connect the sensor to your development board with the provided cable. The small white connector plugs in to the development board and the black connector goes to the CO2 sensor.
+
+![Board to Sensor connection](/assets/board-sensor-connection.png "Board to Sensor connection")
+
+> **Note** Pay special attention to the sensor connection! The red wire should go to the "VCC" pin on the sensor. See this image.
+
+![Sensor connection](/assets/sensor-connection.png "Sensor connection")
+
+Assembly of sensor into the enclosure is described in the [Assembly guide](assembly.md), this is not necessary to get started programming.
+
+# Initial software setup
+
+> **Note** We use [Visual Studio Code](https://code.visualstudio.com/) for this project, install it first if it isn't already.
 
 First we'll clone this repository:
 
@@ -22,13 +36,23 @@ After VS Code has reloaded you should see an icon of a house in the bottom of yo
 
 Click on this icon and you'll be greeted by the PlatformIO Home screen. On this screen select 'Open Project' and navigate to your cloned repository to open it.
 
-After pressing `Open`, PlatformIO will begin installing all the dependencies of the project. This will take another couple of minutes. You'll know when it's done when you see the Build icon appear in your VS code bottom bar:
+After pressing `Open`, PlatformIO will begin installing all the dependencies of the project. This will take another couple of minutes. You'll know when it's done when the clock icon is gone from the PlatformIO tab.
 
-![Build icon](/assets/build-icon.png "Build Icon")
+![PlatformIO Done](/assets/platform-io-done.png "PlatformIO Done")
+
+Now connect your device to your computer, open `src/main.cpp` and have a first look at the code. (Maybe change some displayed text?)
+
+Now we're going to upload our code to the device for the first time! Open the PlatformIO tab (see above) and click on the "Upload and monitor" task. 
+
+![Upload and monitor](/assets/upload-and-monitor.png "Upload and monitor")
+
+A terminal will pop open on the bottom of your screen and PlatformIO will start compiling your code and then upload it to the connected board. If all goes well, you'll see a green `=== SUCCESS ===` message and the device will reboot itself running your code! PlatofrmIO should also have opened the "Serial monitor", these are messages the device is sending to your computer. It should print `Hello from the Serial connection!` every second.
+
+You're all set to get started with the exercises!
 
 # Exercises
 
-In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in `main.cpp`) shows a bootscreen and some text on the display.
+In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in `src/main.cpp`) shows a bootscreen and some text on the display.
 
 1. [Initialize the CO2 sensor and read data from it](exercises/initialize-sensor.md)
 2. [Display sensor data on the screen](exercises/display-sensor-data.md)
@@ -38,6 +62,7 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 6. [Send a notification to your phone using IFTTT](exercises/send-notification.md)
 7. [Log data to ThingSpeak](exercises/log-data.md)
 8. [Make it pretty](exercises/make-it-pretty.md)
+9. [Configure URLs](exercises/configure-urls.md)
 9. [Further improvements](exercises/further-improvements.md)
 
 # Resources

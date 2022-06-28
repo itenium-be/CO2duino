@@ -20,6 +20,10 @@
 #define OLED_RESET 18
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+// Global variables
+bool invertDisplay = true;
+int counter = 0;
+
 // Custom methods must be declared here
 void showBootscreen();
 void drawProgressBar(int16_t maxValue, int16_t currentValue);
@@ -37,8 +41,6 @@ void setup()
     display.cp437(true);
 }
 
-bool invertDisplay = true;
-int counter = 0;
 // This code runs continuously
 void loop()
 {
@@ -56,7 +58,10 @@ void loop()
     display.display();
     counter++;
 
+    Serial.println("Hello from the Serial connection!");
+
     // Every 20 seconds we invert our display to reduce burn in
+    // and reset the counter
     if (counter == 20)
     {
         display.invertDisplay(invertDisplay);
