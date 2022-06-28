@@ -8,7 +8,7 @@ In this exercise we'll connect to a known WiFi network, check out the provided e
 
 ## Useful links
 
-- [WiFI Client basic example](https://github.com/espressif/arduino-esp32/blob/master/libraries/WiFi/examples/WiFiClientBasic/WiFiClientBasic.ino)
+- [WiFi Client basic example](https://github.com/espressif/arduino-esp32/blob/master/libraries/WiFi/examples/WiFiClientBasic/WiFiClientBasic.ino)
 
 ## Expected result
 

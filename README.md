@@ -46,7 +46,7 @@ Now we're going to upload our code to the device for the first time! Open the Pl
 
 ![Upload and monitor](/assets/upload-and-monitor.png "Upload and monitor")
 
-A terminal will pop open on the bottom of your screen and PlatformIO will start compiling your code and then upload it to the connected board. If all goes well, you'll see a green `=== SUCCESS ===` message and the device will reboot itself running your code! PlatofrmIO should also have opened the "Serial monitor", these are messages the device is sending to your computer. It should print `Hello from the Serial connection!` every second.
+A terminal will pop open on the bottom of your screen and PlatformIO will start compiling your code and then upload it to the connected board. If all goes well, you'll see a green `=== SUCCESS ===` message and the device will reboot itself running your code! PlatformIO should also have opened the "Serial monitor", these are messages the device is sending to your computer. It should print `Hello from the Serial connection!` every second.
 
 You're all set to get started with the exercises!
 

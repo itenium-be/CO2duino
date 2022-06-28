@@ -4,7 +4,7 @@
 
 # Displaying the sensor data
 
-Ok, so we've got our sensor sending data to our computer over its `Serial` connection, now let's try displaying this data on the OLED display!
+Okay, so we've got our sensor sending data to our computer over its `Serial` connection, now let's try displaying this data on the OLED display!
 
 Your device should still be blinking "Hello" at you, play around with this to display the captured data instead.
 
