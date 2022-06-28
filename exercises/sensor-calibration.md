@@ -1,5 +1,5 @@
-| Index | Next exercise |
-| :--- | ---: |
+| Index                                       |                                      Next exercise |
+| :------------------------------------------ | -------------------------------------------------: |
 | [Back to exercises](../README.md#exercises) | [Connect to a known WiFi network](connect-wifi.md) |
 
 # Sensor calibration
@@ -12,9 +12,7 @@ To bring it all together, in your `setup()` function, check if we've got some sa
 
 In the `loop()` function we should check if a minute has passed. If so, get the baseline measurements and save them using the Preferences library.
 
->>>
-**Note** Not everything will go as planned on the first try, make it a habit to send some debugging data to the `Serial` line to debug your code when it is running on the microcontroller.
->>>
+> > > **Note** Not everything will go as planned on the first try, make it a habit to send some debugging data to the `Serial` line to debug your code when it is running on the microcontroller.
 
 ## Useful links
 

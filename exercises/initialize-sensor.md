@@ -1,5 +1,5 @@
-| Index | Next exercise |
-| :--- | ---: |
+| Index                                       |                                               Next exercise |
+| :------------------------------------------ | ----------------------------------------------------------: |
 | [Back to exercises](../README.md#exercises) | [Display sensor data on the screen](display-sensor-data.md) |
 
 # Initializing the sensor
@@ -12,9 +12,7 @@ Set up the sensor in the `setup()` function and read it out in the `loop()` func
 
 When building and uploading your program to the microcontroller, make sure to use the `Upload and Monitor` option in the PlatformIO Project tasks. This will automatically open the serial monitor after the program is flashed.
 
->>>
-**Note** if the sensor only outputs a value of 400 for the CO2 and 0 for the TVOC, don't panic, this is normal in the first ~30s of polling.
->>>
+> > > **Note** if the sensor only outputs a value of 400 for the CO2 and 0 for the TVOC, don't panic, this is normal in the first ~30s of polling.
 
 ## Expected result
 

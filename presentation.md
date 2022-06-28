@@ -40,3 +40,26 @@ Small CO2 sensor with WiFi connectivity and integrated display
 ---
 
 # Hardware used
+
+![width:600px](/assets/s2-pico-sgp30.png "Photo")
+
+---
+
+# Hardware used
+
+- WeMos S2 Pico development board
+- SGP30 CO2 Sensor
+
+---
+
+# Software used
+
+![width:600px](/assets/software-used.png "Photo")
+
+---
+
+# Software used
+
+- C++ programming language
+- Arduino framework
+- Several libraries
