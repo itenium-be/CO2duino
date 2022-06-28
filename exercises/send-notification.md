@@ -2,16 +2,16 @@
 | :------------------------------------------ | ------------------------------------: |
 | [Back to exercises](../README.md#exercises) | [Log data to ThingSpeak](log-data.md) |
 
-# Set up an access point
+# Send a notification to your phone using IFTTT
 
-Since we want to be able to move our CO2 meter, we can't always hardcode our WiFi network into the program.
+A high concentration of CO2 in the air is detrimental to a lot of things, we have a harder time concentrating, diseases get spread more efficiently and it can lead to headaches. To remind us to open up a window once in a while we'll set up an [IFTTT](https://ifttt.com/explore) action that sends us a notification whenever the measured CO2 in the air is above 800. Check out the tutorial linked below to see how to do this. Make sure you only send a notification when the last one is at least 10 minutes ago.
 
-[WiFiManager](https://github.com/tzapu/WiFiManager) is an Arduino library we can use to allow the user to connect to the CO2 meter and then select their home WiFi network. Check out the provided tutorial and github link to let the user select their own WiFi network when the CO2 meter starts up.
+> > > **Note** To receive notifications from IFTTT on your phone you have to install their app.
 
 ## Useful links
 
-- [Random Nerd WiFiManager Tutorial](https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/)
-- [WiFiManager library (outdated docs)](https://github.com/tzapu/WiFiManager)
+- [ESP32 - IFTTT tutorial](https://esp32io.com/tutorials/esp32-ifttt)
+- [Arduino millis() method, see how much time has passed](https://www.arduino.cc/reference/en/language/functions/time/millis/)
 
 ## Expected result
 
