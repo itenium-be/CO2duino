@@ -36,8 +36,9 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 4. [Connect to a known WiFi network](exercises/connect-wifi.md)
 5. [Set up an access point so the user can choose their WiFi network and enter its password](exercises/access-point.md)
 6. [Send a notification to your phone using IFTTT](exercises/send-notification.md)
-7. Log data to ThingSpeak
-8. Make it pretty
+7. [Log data to ThingSpeak](exercises/log-data.md)
+8. [Make it pretty](exercises/make-it-pretty.md)
+9. [Further improvements](exercises/further-improvements.md)
 
 # Resources
 
@@ -62,6 +63,12 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 ## Utility
 
 - [Preferences](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/preferences.html)
+
+## Tutorials
+
+- [Random Nerd Tutorials](https://randomnerdtutorials.com/)
+- [Adafruit Learn](https://learn.adafruit.com/)
+- [Savjee tutorials and blog](https://savjee.be/)
 
 # Troubleshooting
 

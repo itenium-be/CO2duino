@@ -1,6 +1,6 @@
-| Index                                       |                                                         Next exercise |
-| :------------------------------------------ | --------------------------------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Send a notification to your phone using IFTTT](send-notification.md) |
+| Index                                       |                       Next exercise |
+| :------------------------------------------ | ----------------------------------: |
+| [Back to exercises](../README.md#exercises) | [Make it pretty](make-it-pretty.md) |
 
 # Set up an access point
 
@@ -17,4 +17,4 @@ Since we want to be able to move our CO2 meter, we can't always hardcode our WiF
 
 ![Result](/assets/access-point-result.png "Result")
 
-Everything works? Great! Head on over to the next exercise,[Send a notification to your phone using IFTTT](send-notification.md)!
+Everything works? Great! Head on over to the next exercise, [Make it pretty](make-it-pretty.md)!

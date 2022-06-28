@@ -9,8 +9,6 @@ In this exercise we'll connect to a known WiFi network, check out the provided e
 ## Useful links
 
 - [WiFI Client basic example](https://github.com/espressif/arduino-esp32/blob/master/libraries/WiFi/examples/WiFiClientBasic/WiFiClientBasic.ino)
-- [Random Nerd WiFiManager](https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/)
-- [Adafruit SGP30 library](https://github.com/adafruit/Adafruit_SGP30)
 
 ## Expected result
 
