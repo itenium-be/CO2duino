@@ -2,19 +2,24 @@
 | :------------------------------------------ | ----------------------------------------------: |
 | [Back to exercises](../README.md#exercises) | [Further improvements](further-improvements.md) |
 
-# Set up an access point
+# Make it pretty
 
-Since we want to be able to move our CO2 meter, we can't always hardcode our WiFi network into the program.
+In this exercise we'll try to make our displayed result a bit prettier. Check out the display libraries' documentation below and make it your own!
 
-[WiFiManager](https://github.com/tzapu/WiFiManager) is an Arduino library we can use to allow the user to connect to the CO2 meter and then select their home WiFi network. Check out the provided tutorial and github link to let the user select their own WiFi network when the CO2 meter starts up.
+Some ideas:
+
+- Try to use the icons provided in the `icons.h` file
+- Let the user know if the device is connected to the WiFi with an icon
+- Blink a warning sign if the measured CO2 is over 800
+- Try out some fonts!
 
 ## Useful links
 
-- [Random Nerd WiFiManager Tutorial](https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/)
-- [WiFiManager library (outdated docs)](https://github.com/tzapu/WiFiManager)
+- [Adafruit SSD1306 OLED driver](https://github.com/adafruit/Adafruit_SSD1306)
+- [Adafruit Graphics library](https://learn.adafruit.com/adafruit-gfx-graphics-library)
 
-## Expected result
+## Example result
 
-![Result](/assets/access-point-result.png "Result")
+![Result](/assets/make-it-pretty-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Further improvements](further-improvements.md)!
