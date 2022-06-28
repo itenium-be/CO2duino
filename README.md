@@ -12,15 +12,15 @@ To get started you'll have to connect the sensor to your development board with 
 
 ![Board to Sensor connection](/assets/board-sensor-connection.png "Board to Sensor connection")
 
-> **Note** Pay special attention to the sensor connection! The red wire should go to the "VCC" pin on the sensor. See this image.
+> **:warning: Note** Pay special attention to the sensor connection! The red wire should go to the "VCC" pin on the sensor. See this image.
 
 ![Sensor connection](/assets/sensor-connection.png "Sensor connection")
 
-Assembly of sensor into the enclosure is described in the [Assembly guide](assembly.md), this is not necessary to get started programming.
+Assembly of the board and sensor into the enclosure is described in the [Assembly guide](assembly.md), this is not necessary to get started programming.
 
 # Initial software setup
 
-> **Note** We use [Visual Studio Code](https://code.visualstudio.com/) for this project, install it first if it isn't already.
+> **:warning: Note** We use [Visual Studio Code](https://code.visualstudio.com/) for this project, install it first if it isn't already.
 
 First we'll clone this repository:
 
@@ -40,7 +40,7 @@ After pressing `Open`, PlatformIO will begin installing all the dependencies of 
 
 ![PlatformIO Done](/assets/platform-io-done.png "PlatformIO Done")
 
-Now connect your device to your computer, open `src/main.cpp` and have a first look at the code. (Maybe change some displayed text?)
+Now connect your device to your computer, open [`src/main.cpp`](src/main.cpp) and have a first look at the code. (Maybe change some displayed text?)
 
 Now we're going to upload our code to the device for the first time! Open the PlatformIO tab (see above) and click on the "Upload and monitor" task. 
 
@@ -52,7 +52,7 @@ You're all set to get started with the exercises!
 
 # Exercises
 
-In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in `src/main.cpp`) shows a bootscreen and some text on the display.
+In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in [`src/main.cpp`](src/main.cpp)) shows a bootscreen and some text on the display.
 
 1. [Initialize the CO2 sensor and read data from it](exercises/initialize-sensor.md)
 2. [Display sensor data on the screen](exercises/display-sensor-data.md)
