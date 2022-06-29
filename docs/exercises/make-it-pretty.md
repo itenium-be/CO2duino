@@ -1,6 +1,6 @@
-| Index                                       |                                   Next exercise |
-| :------------------------------------------ | ----------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Configure URLs](configure-urls.md) |
+| Index                                      |                       Next exercise |
+| :----------------------------------------- | ----------------------------------: |
+| [Back to exercises](../index.md#exercises) | [Configure URLs](configure-urls.md) |
 
 # Make it pretty
 

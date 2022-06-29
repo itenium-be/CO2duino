@@ -1,6 +1,6 @@
-| Index                                       |
-| :------------------------------------------ |
-| [Back to exercises](../README.md#exercises) |
+| Index                                      |
+| :----------------------------------------- |
+| [Back to exercises](../index.md#exercises) |
 
 # Further improvements
 

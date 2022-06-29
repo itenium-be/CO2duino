@@ -1,6 +1,6 @@
-| Index                                       |                                   Next exercise |
-| :------------------------------------------ | ----------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Further improvements](further-improvements.md) |
+| Index                                      |                                   Next exercise |
+| :----------------------------------------- | ----------------------------------------------: |
+| [Back to exercises](../index.md#exercises) | [Further improvements](further-improvements.md) |
 
 # Configure URL's
 

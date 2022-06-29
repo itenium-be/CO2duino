@@ -13,8 +13,18 @@ stages:
   - test
 
 before_script:
-  - "pip install -U platformio"
+  - "pip install -U platformio mkdocs"
 
 job:
   stage: test
   script: "pio run"
+
+pages:
+  stage: deploy
+  script:
+    - mkdocs build --strict --verbose
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

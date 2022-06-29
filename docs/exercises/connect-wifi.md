@@ -1,6 +1,6 @@
-| Index                                       |                                                                                              Next exercise |
-| :------------------------------------------ | ---------------------------------------------------------------------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Set up an access point so the user can choose their WiFi network and enter its password](access-point.md) |
+| Index                                      |                                                                                              Next exercise |
+| :----------------------------------------- | ---------------------------------------------------------------------------------------------------------: |
+| [Back to exercises](../index.md#exercises) | [Set up an access point so the user can choose their WiFi network and enter its password](access-point.md) |
 
 # Connect to a known WiFi network
 

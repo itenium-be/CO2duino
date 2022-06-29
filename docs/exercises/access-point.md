@@ -1,6 +1,6 @@
-| Index                                       |                                                         Next exercise |
-| :------------------------------------------ | --------------------------------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Send a notification to your phone using IFTTT](send-notification.md) |
+| Index                                      |                                                         Next exercise |
+| :----------------------------------------- | --------------------------------------------------------------------: |
+| [Back to exercises](../index.md#exercises) | [Send a notification to your phone using IFTTT](send-notification.md) |
 
 # Set up an access point
 

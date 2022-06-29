@@ -1,0 +1,19 @@
+site_name: CO2Duino
+site_url: https://michielr.gitlab.io/co2duino
+nav:
+  - Home: "index.md"
+  - "Exercises":
+      - "Initialize the CO2 sensor and read data from it": "exercises/initialize-sensor.md"
+      - "Display sensor data on the screen": "exercises/display-sensor-data.md"
+      - "Save the calibration data to the device": "exercises/sensor-calibration.md"
+      - "Connect to a known WiFi network": "exercises/connect-wifi.md"
+      - "Set up access point": "exercises/access-point.md"
+      - "Send a notification to your phone using IFTTT": "exercises/send-notification.md"
+      - "Log data to ThingSpeak": "exercises/log-data.md"
+      - "Make it pretty": "exercises/make-it-pretty.md"
+      - "Configure URLs": "exercises/configure-urls.md"
+      - "Further improvements": "exercises/further-improvements.md"
+  - Assembly: "assembly.md"
+theme:
+  name: null
+  custom_dir: "cinder"

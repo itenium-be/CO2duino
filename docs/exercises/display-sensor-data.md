@@ -1,6 +1,6 @@
-| Index                                       |                                                    Next exercise |
-| :------------------------------------------ | ---------------------------------------------------------------: |
-| [Back to exercises](../README.md#exercises) | [Save the calibration data to the device](sensor-calibration.md) |
+| Index                                      |                                                    Next exercise |
+| :----------------------------------------- | ---------------------------------------------------------------: |
+| [Back to exercises](../index.md#exercises) | [Save the calibration data to the device](sensor-calibration.md) |
 
 # Displaying the sensor data
 
