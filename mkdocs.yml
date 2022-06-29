@@ -1,5 +1,6 @@
 site_name: CO2Duino
 site_url: https://michielr.gitlab.io/co2duino
+site_dir: public
 nav:
   - Home: "index.md"
   - "Exercises":
