@@ -15,7 +15,7 @@ Set the provided URL's to a global variable and save them using the Preferences 
 
 ## Expected result
 
-![Result](/assets/configure-urls-result.png "Result")
+![Result](../assets/configure-urls-result.png "Result")
 
 Everything works? Congratulations! You've built a feature complete CO2 sensor! Give yourself a high five!
 

@@ -12,6 +12,6 @@ In this exercise we'll connect to a known WiFi network, check out the provided e
 
 ## Expected result
 
-![Result](/assets/connect-wifi-result.png "Result")
+![Result](../assets/connect-wifi-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Set up an access point so the user can choose their WiFi network and enter its password](access-point.md)!

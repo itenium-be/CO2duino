@@ -16,6 +16,6 @@ When building and uploading your program to the microcontroller, make sure to us
 
 ## Expected result
 
-![Result](/assets/initialize-sensor-result.png "Result")
+![Result](../assets/initialize-sensor-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [displaying this data on the display](display-sensor-data.md)!

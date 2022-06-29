@@ -20,6 +20,6 @@ Some ideas:
 
 ## Example result
 
-![Result](/assets/make-it-pretty-result.png "Result")
+![Result](../assets/make-it-pretty-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Configure URLs](configure-urls.md)!

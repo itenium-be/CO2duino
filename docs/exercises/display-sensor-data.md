@@ -16,6 +16,6 @@ Your device should still be blinking "Hello" at you, play around with this to di
 
 ## Expected result
 
-![Result](/assets/display-data-result.png "Result")
+![Result](../assets/display-data-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Save the calibration data to the device](sensor-calibration.md)!

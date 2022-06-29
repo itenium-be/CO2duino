@@ -17,6 +17,6 @@ A high concentration of CO2 in the air is detrimental to a lot of things, we hav
 
 ## Expected result
 
-![Result](/assets/notification-result.png "Result")
+![Result](../assets/notification-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Log data to ThingSpeak](log-data.md)!

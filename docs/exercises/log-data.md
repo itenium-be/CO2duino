@@ -14,6 +14,6 @@ To get an historical view of our data (maybe to see some trends) we need to log 
 
 ## Expected result
 
-![Result](/assets/thingspeak-result.png "Result")
+![Result](../assets/thingspeak-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Make it pretty](make-it-pretty.md)!

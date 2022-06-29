@@ -21,6 +21,6 @@ In the `loop()` function we should check if a minute has passed. If so, get the 
 
 ## Expected result
 
-![Result](/assets/calibration-result.png "Result")
+![Result](../assets/calibration-result.png "Result")
 
 Everything works? Great! Head on over to the next exercise, [Connect to a known WiFi network](connect-wifi.md)!
