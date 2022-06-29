@@ -4,7 +4,7 @@ Wow, you've built a complete CO2 meter with smart capabilities, all from scratch
 
 If this workshop has scratched an itch for you and you'd like to go a bit further down the rabbit hole I've listed some ideas and resources here to get you started.
 
-Some of them are implemented in the final firmware you can find on the `master` branch of this repository. So don't hesitate to have a look!
+Some of them are implemented in the final firmware you can find on the [`master`](https://gitlab.com/michielr/co2duino/-/tree/master/src) branch of this repository. So don't hesitate to have a look!
 
 ## Tasks and threading
 

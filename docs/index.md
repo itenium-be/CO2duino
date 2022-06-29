@@ -4,7 +4,7 @@ A DIY CO2 meter based on the [Wemos S2 Pico](https://www.wemos.cc/en/latest/s2/s
 
 ![A photo of the end result](assets/co2-meter.jpeg "Photo")
 
-# Initial hardware setup
+## Initial hardware setup
 
 To get started you'll have to connect the sensor to your development board with the provided cable. The small white connector plugs in to the development board and the black connector goes to the CO2 sensor.
 
@@ -16,7 +16,7 @@ To get started you'll have to connect the sensor to your development board with 
 
 Assembly of the board and sensor into the enclosure is described in the [Assembly guide](assembly.md), this is not necessary to get started programming.
 
-# Initial software setup
+## Initial software setup
 
 > **⚠ Note** We use [Visual Studio Code](https://code.visualstudio.com/) for this project, install it first if it isn't already.
 
@@ -48,7 +48,7 @@ A terminal will pop open on the bottom of your screen and PlatformIO will start 
 
 You're all set to get started with the exercises!
 
-# Exercises
+## Exercises
 
 In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in [`src/main.cpp`](https://gitlab.com/michielr/co2duino/-/blob/development/src/main.cpp)) shows a bootscreen and some text on the display.
 
@@ -63,37 +63,37 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 9. [Configure URLs](exercises/configure-urls.md)
 10. [Further improvements](exercises/further-improvements.md)
 
-# Resources
+## Resources
 
-## Enclosure
+### Enclosure
 
 - [Assembly guide](assembly.md)
 
-## CO2 Sensor (Sensirion SGP30)
+### CO2 Sensor (Sensirion SGP30)
 
 - [SGP30 Datasheet](https://sensirion.com/media/documents/984E0DD5/61644B8B/Sensirion_Gas_Sensors_Datasheet_SGP30.pdf)
 - [Adafruit SGP30 library](https://github.com/adafruit/Adafruit_SGP30)
 
-## Display
+### Display
 
 - [Adafruit SSD1306 OLED driver](https://github.com/adafruit/Adafruit_SSD1306)
 - [Adafruit Graphics library](https://learn.adafruit.com/adafruit-gfx-graphics-library)
 
-## WiFi connectivity
+### WiFi connectivity
 
 - [WiFiManager](https://github.com/tzapu/WiFiManager)
 
-## Utility
+### Utility
 
 - [Preferences](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/preferences.html)
 
-## Tutorials
+### Tutorials
 
 - [Random Nerd Tutorials](https://randomnerdtutorials.com/)
 - [Adafruit Learn](https://learn.adafruit.com/)
 - [Savjee tutorials and blog](https://savjee.be/)
 
-# Troubleshooting
+## Troubleshooting
 
 **My code won't flash! There is no COM port found!**
 
