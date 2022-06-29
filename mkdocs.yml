@@ -16,5 +16,4 @@ nav:
       - "Further improvements": "exercises/further-improvements.md"
   - Assembly: "assembly.md"
 theme:
-  name: null
-  custom_dir: "cinder"
+  name: material

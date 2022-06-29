@@ -14,7 +14,7 @@ stages:
   - deploy
 
 before_script:
-  - "pip install -U platformio mkdocs"
+  - "pip install -U platformio mkdocs mkdocs-material"
 
 job:
   stage: test
