@@ -13,4 +13,4 @@ Since we want to be able to move our CO2 meter, we can't always hardcode our WiF
 
 ![Result](../assets/access-point-result.png "Result")
 
-Everything works? Great! Head on over to the next exercise,[Send a notification to your phone using IFTTT](send-notification.md)!
+Everything works? Great! Head on over to the next exercise, [Send a notification to your phone using IFTTT](send-notification.md)!

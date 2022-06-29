@@ -1,6 +1,8 @@
 site_name: CO2Duino
 site_url: https://michielr.gitlab.io/co2duino
 site_dir: public
+repo_url: https://gitlab.com/michielr/co2duino/
+repo_name: co2duino
 nav:
   - Home: "index.md"
   - "Exercises":
@@ -17,3 +19,14 @@ nav:
   - Assembly: "assembly.md"
 theme:
   name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode

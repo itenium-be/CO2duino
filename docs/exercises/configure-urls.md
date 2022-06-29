@@ -15,4 +15,4 @@ Set the provided URL's to a global variable and save them using the Preferences 
 
 Everything works? Congratulations! You've built a feature complete CO2 sensor! Give yourself a high five!
 
-Hungry for more? See the [Further improvements](further-improvements.md) exercise where I've provided you with some reading materials and ideas to implement some advanced features!
+Hungry for more? See the [Further improvements](further-improvements.md) exercise where I've provided you with some reading material and ideas to implement some advanced features!
