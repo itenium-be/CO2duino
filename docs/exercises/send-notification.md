@@ -1,7 +1,3 @@
-| Index                                      |                         Next exercise |
-| :----------------------------------------- | ------------------------------------: |
-| [Back to exercises](../index.md#exercises) | [Log data to ThingSpeak](log-data.md) |
-
 # Send a notification to your phone using IFTTT
 
 A high concentration of CO2 in the air is detrimental to a lot of things, we have a harder time concentrating, diseases get spread more efficiently and it can lead to headaches. To remind us to open up a window once in a while we'll set up an [IFTTT](https://ifttt.com/explore) action that sends us a notification whenever the measured CO2 in the air is above 800. Check out the tutorial linked below to see how to do this. Make sure you only send a notification when the last one is at least 10 minutes ago.

@@ -1,7 +1,3 @@
-| Index                                      |                                               Next exercise |
-| :----------------------------------------- | ----------------------------------------------------------: |
-| [Back to exercises](../index.md#exercises) | [Display sensor data on the screen](display-sensor-data.md) |
-
 # Initializing the sensor
 
 Check the [Adafruit SGP30](https://github.com/adafruit/Adafruit_SGP30) github repo to read about the sensor we're going to use.

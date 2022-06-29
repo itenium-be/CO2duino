@@ -1,7 +1,3 @@
-| Index                                      |                                                    Next exercise |
-| :----------------------------------------- | ---------------------------------------------------------------: |
-| [Back to exercises](../index.md#exercises) | [Save the calibration data to the device](sensor-calibration.md) |
-
 # Displaying the sensor data
 
 Okay, so we've got our sensor sending data to our computer over its `Serial` connection, now let's try displaying this data on the OLED display!

@@ -1,7 +1,3 @@
-| Index                                      |
-| :----------------------------------------- |
-| [Back to exercises](../index.md#exercises) |
-
 # Further improvements
 
 Wow, you've built a complete CO2 meter with smart capabilities, all from scratch! I'm super proud of you!

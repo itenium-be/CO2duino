@@ -1,7 +1,3 @@
-| Index                                      |                                                         Next exercise |
-| :----------------------------------------- | --------------------------------------------------------------------: |
-| [Back to exercises](../index.md#exercises) | [Send a notification to your phone using IFTTT](send-notification.md) |
-
 # Set up an access point
 
 Since we want to be able to move our CO2 meter, we can't always hardcode our WiFi network into the program.

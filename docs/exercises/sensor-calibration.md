@@ -1,7 +1,3 @@
-| Index                                      |                                      Next exercise |
-| :----------------------------------------- | -------------------------------------------------: |
-| [Back to exercises](../index.md#exercises) | [Connect to a known WiFi network](connect-wifi.md) |
-
 # Sensor calibration
 
 The sensors we use get calibrated in the factory, but to accurately measure CO2 values it needs a baseline. On earth the concentration of CO2 in the outside air is around 400 ppm. So the sensor expects that the lowest value it has read should be around this value (the baseline). You can read this "baseline measurement" from the chip and save it somewhere so the next time you start the sensor you can tell it what its last baseline measurement was. To get the baseline measurement, have a look at the provided example in our SGP30 library.

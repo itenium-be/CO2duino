@@ -1,7 +1,3 @@
-| Index                                      |                       Next exercise |
-| :----------------------------------------- | ----------------------------------: |
-| [Back to exercises](../index.md#exercises) | [Configure URLs](configure-urls.md) |
-
 # Make it pretty
 
 In this exercise we'll try to make our displayed result a bit prettier. Check out the display libraries' documentation below and make it your own!
