@@ -11,7 +11,7 @@ cache:
 
 stages:
   - test
-  - pages
+  - deploy
 
 before_script:
   - "pip install -U platformio mkdocs"
