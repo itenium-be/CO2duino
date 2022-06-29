@@ -18,10 +18,12 @@ before_script:
 
 job:
   stage: test
+  needs: []
   script: "pio run"
 
 pages:
   stage: deploy
+  needs: []
   script:
     - mkdocs build --strict --verbose
   artifacts:
