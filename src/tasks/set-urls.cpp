@@ -56,7 +56,7 @@ void setURLs(void *parameter)
     if (thingspeakUrlFromWiFiManager_string != "")
     {
         data.thingspeak_url = thingspeakUrlFromWiFiManager_string;
-        preferences.putString("ThingSpeak_url", data.ifttt_url);
+        preferences.putString("ThingSpeak_url", data.thingspeak_url);
     }
     // If no URL was passed, check for a previously saved one in the Preferences
     else if (iftttUrlFromPreferences != "")
