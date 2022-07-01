@@ -95,8 +95,12 @@ In these exercises we'll build up to a fully functioning CO2 meter, the exercise
 
 ## Troubleshooting
 
-**My code won't flash! There is no COM port found!**
+### My code won't flash! There is no COM port found!
 
 No worries, we can manually set the device to "Flashing mode" by pressing the two tiny buttons on the side of the board at the same time. Your device will reboot and be ready to flash again. You might have to manually reset the board after flashing by pressing the tiny "Reset" button.
 
 ![Buttons](assets/troubleshoot-reset.png "Buttons")
+
+### Upload and monitor asks me for a COM port
+
+PlatformIO might be starting the monitoring task a bit too fast. Try to use the "Upload" task instead of "Upload and monitor" and when you've seen your device reboot open the "Monitor" task.
