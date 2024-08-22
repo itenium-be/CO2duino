@@ -23,7 +23,7 @@ Assembly of the board and sensor into the enclosure is described in the [Assembl
 First we'll clone this repository:
 
 ```sh
-git clone https://gitlab.com/michielr/co2duino.git
+git clone https://github.com/itenium-be/CO2duino
 ```
 
 Next we have to install the PlatformIO extension into Visual Studio Code. Go to extensions, search for `PlatformIO` and press install. The initial install takes some time, you'll get notified after about 2 minutes to reload your VS Code window.
@@ -38,7 +38,7 @@ After pressing `Open`, PlatformIO will begin installing all the dependencies of 
 
 ![PlatformIO Done](assets/platform-io-done.png "PlatformIO Done")
 
-Now connect your device to your computer, open [`src/main.cpp`](https://gitlab.com/michielr/co2duino/-/blob/development/src/main.cpp) and have a first look at the code. (Maybe change some displayed text?)
+Now connect your device to your computer, open [`src/main.cpp`](https://github.com/itenium-be/CO2duino/blob/development/src/main.cpp) and have a first look at the code. (Maybe change some displayed text?)
 
 Now we're going to upload our code to the device for the first time! Open the PlatformIO tab (see above) and click on the "Upload and monitor" task.
 
@@ -50,7 +50,7 @@ You're all set to get started with the exercises!
 
 ## Exercises
 
-In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in [`src/main.cpp`](https://gitlab.com/michielr/co2duino/-/blob/development/src/main.cpp)) shows a bootscreen and some text on the display.
+In these exercises we'll build up to a fully functioning CO2 meter, the exercises aren't fleshed out but provide some reading material to get started. As a starting point the program (found in [`src/main.cpp`](https://github.com/itenium-be/CO2duino/blob/development/src/main.cpp)) shows a bootscreen and some text on the display.
 
 1. [Initialize the CO2 sensor and read data from it](exercises/initialize-sensor.md)
 2. [Display sensor data on the screen](exercises/display-sensor-data.md)
